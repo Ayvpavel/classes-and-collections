@@ -16,7 +16,11 @@
  * @returns {number}
  */
 function repair(width, length, height) {
-    return undefined;
+    const area = 2 * height * (width + length);
+
+    const cans = Math.ceil(area / 16);
+
+    return cans;
 }
 
 module.exports = repair;

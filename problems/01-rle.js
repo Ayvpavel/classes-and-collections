@@ -10,7 +10,24 @@
  * @returns {string}
  */
 function rle(value) {
-    return undefined;
+    let result = "";
+    let count = 1;
+    for (let i = 0; i < value.length; i++) {
+        const current = value[i];
+        const next = value[i + 1];
+        if (current === next) {
+            count++;
+        } else {
+            if (count > 1) {
+                result += count + current;
+            } else {
+                result += current;
+            }
+            count = 1;
+        }
+    }
+
+    return result;
 }
 
 module.exports = rle;
